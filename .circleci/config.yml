@@ -51,8 +51,7 @@ workflows:
           destination: screens 
 
     lint-commit-message:
-    executor: api
-    steps:
+   steps:
       - checkout
       - run: npm ci
       - run:
