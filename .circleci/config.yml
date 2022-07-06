@@ -26,7 +26,13 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: "echo Run, Tests!"
+          command: "echo Test, Passed!"
+           - run:
+          name: Check Format
+          command: "echo Format Check, Done!"
+           - run:
+          name: Check Commit Messages
+          command: "echo Commit Messages Check, Done!"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
