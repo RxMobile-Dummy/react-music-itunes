@@ -38,27 +38,27 @@ workflows:
       - build
       - test
 
-    src-ui-check:
-    executor: src-screens
-    resource_class: small
-    steps:
-      - checkout
-      - run: cd src/screens  && react-native format --set-exit-if-changed -o none lib && exit $(git diff | wc -l)
-      - src-ui-check:
-          ci-only: true
-      - store_artifacts:
-          path: ./src/screens
-          destination: screens 
+  #   src-ui-check:
+  #   executor: src-screens
+  #   resource_class: small
+  #   steps:
+  #     - checkout
+  #     - run: cd src/screens  && react-native format --set-exit-if-changed -o none lib && exit $(git diff | wc -l)
+  #     - src-ui-check:
+  #         ci-only: true
+  #     - store_artifacts:
+  #         path: ./src/screens
+  #         destination: screens 
 
-    lint-commit-message:
-   steps:
-      - checkout
-      - run: npm ci
-      - run:
-          name: Define environment variable with lastest commit's message
-          command: |
-            echo 'export COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")' >> $BASH_ENV
-            source $BASH_ENV
-      - run:
-          name: Lint commit message
-          command: echo "$COMMIT_MESSAGE" | npx commitlint
+  #   lint-commit-message:
+  #  steps:
+  #     - checkout
+  #     - run: npm ci
+  #     - run:
+  #         name: Define environment variable with lastest commit's message
+  #         command: |
+  #           echo 'export COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")' >> $BASH_ENV
+  #           source $BASH_ENV
+  #     - run:
+  #         name: Lint commit message
+  #         command: echo "$COMMIT_MESSAGE" | npx commitlint
