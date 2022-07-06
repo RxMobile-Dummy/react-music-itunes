@@ -27,10 +27,14 @@ jobs:
       - run:
           name: Run tests
           command: "echo Test, Passed!"
-           - run:
+    steps:
+      - checkout
+      - run:
           name: Check Format
           command: "echo Format Check, Done!"
-           - run:
+     steps:
+      - checkout
+      - run:
           name: Check Commit Messages
           command: "echo Commit Messages Check, Done!"
 
