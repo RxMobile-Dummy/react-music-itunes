@@ -35,8 +35,8 @@ jobs:
 workflows:
  build-test-and-deploy-workflow:
     jobs:
-      - build
-      - test
+      - build-test-and-deploy
+      
 
   #   src-ui-check:
   #   executor: src-screens
@@ -62,3 +62,5 @@ workflows:
   #     - run:
   #         name: Lint commit message
   #         command: echo "$COMMIT_MESSAGE" | npx commitlint
+
+  
