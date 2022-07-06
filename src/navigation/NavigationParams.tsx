@@ -1,1 +1,3 @@
-export type NavigationParams = {};
+export type NavigationParams = {
+  Splash: undefined;
+};
