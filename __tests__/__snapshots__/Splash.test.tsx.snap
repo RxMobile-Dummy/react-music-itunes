@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test against snapshot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#0E0E0E",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "opacity": 0,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Array [
+            Object {
+              "height": 200,
+              "width": 300,
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
