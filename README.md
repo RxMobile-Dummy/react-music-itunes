@@ -1,6 +1,10 @@
 # Muzik
 -  Created a react-native expo application that fetches data from itunes api
 
+## Features
+- Splash screen
+    - We have used muzik application's logo in splash screen to make it better.
+    
 ## Package Structure
 ```
 com.muzik.in
