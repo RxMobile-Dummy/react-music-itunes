@@ -14,18 +14,20 @@ const Splash: React.FC<Props> = ({ navigation }) => {
     _goToIntroScreen();
   }, []);
 
+  // To animate the splash logo,
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 5000,
+      duration: 4000,
       useNativeDriver: true,
     }).start();
   }, []);
 
+  //Navigate to Into screen
   function _goToIntroScreen() {
     setTimeout(() => {
-      // navigation.navigate("Intro");
-    }, 1000);
+      navigation.navigate("Intro");
+    }, 2000);
   }
   return (
     <SafeAreaView style={styles.mainContainer}>
