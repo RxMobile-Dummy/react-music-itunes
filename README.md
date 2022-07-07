@@ -67,15 +67,16 @@ Muzik/
   - Use TypeScript anywhere: TypeScript can be compiled to run on any browser, device, or operating system. TypeScript is not specific to any single environment.
   - TypeScript supports JS libraries: With TypeScript, developers can use already existing JavaScript code, incorporate popular JavaScript libraries, or call the TS Code from native JavaScript code.
 - **Redux**
-   <p align="center">
-  <img width="300" height="300" src="redux_rn.png">
-</p>
+     <p align="center">
+    <img width="300" height="300" src="redux_rn.png">
+  </p>
+
   - Increases the Predictability of a State. In the Redux library, a state is invariably predictable.
   - It is Highly Maintainable.
   - It Prevents Re-renders.
   - Redux Optimizes Performance.
   - Makes Debugging Easier.
-  - Useful in Server-Side Rendering. 
+  - Useful in Server-Side Rendering.
   - Provides Ease of Testing.
 
 - **LifeCycle Component**
