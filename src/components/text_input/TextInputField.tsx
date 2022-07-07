@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     fontSize: hp("2%"),
-    color: Colors.black,
+    color: Colors.primary,
   },
 });

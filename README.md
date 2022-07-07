@@ -1,6 +1,18 @@
 # Muzik
 -  Created a react-native expo application that fetches data from itunes api
 
+## Features
+- Home Screen
+  - We have made user friendly design of home screen
+  - We have made attractive bottom tab bar with three screens 
+     - Music Screen
+      - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
+      - Users can find list according to album name and release date
+    - Setings Screen
+      - User can set different types of settings and log out from the app 
+    - Podcast Screen
+      - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
+    
 ## Package Structure
 ```
 com.muzik.in
