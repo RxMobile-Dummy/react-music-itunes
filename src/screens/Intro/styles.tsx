@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   mainContainer: { flex: 1, backgroundColor: Colors.primary },
   imageView: {
     height: hp("45%"),
-    width: wp("75%"),
+    width: wp("100%"),
     alignSelf: "center",
     borderTopLeftRadius: wp("50%"),
     borderTopRightRadius: wp("50%"),
