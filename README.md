@@ -77,15 +77,15 @@ Muzik/
   - Makes Debugging Easier.
   - Useful in Server-Side Rendering. 
   - Provides Ease of Testing.
-  
-  - **LifeCycle Component**
+
+- **LifeCycle Component**
   - Hooks
   - Functional Components
-  - **Unit Testing**
+- **Unit Testing**
   - Jest Framework
   - Offers a CLI tool to control your tests easily
   - Comes with an interactive mode that automatically runs all affected tests for the code changes you’ve made in your last commit
-  - Provides syntax to test a single test or skip tests with .only and .skip. This feature is useful when debugging individual 
+  - Provides syntax to test a single test or skip tests with .only and .skip. This feature is useful when debugging individual
     tests
 - **Animations**
   - The Animated (default feature of react-native) is designed to make animations fluid, powerful, and painless to build and maintain. Animated focuses on declarative relationships between inputs and outputs, configurable transforms in between, and start/stop methods to control time-based animation execution.
