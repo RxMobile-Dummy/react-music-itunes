@@ -6,7 +6,7 @@ import { Colors } from "../constants/Color";
 import Splash from "../screens/Splash";
 import HomeScreen from "../screens/home";
 import IntroScreen from "../screens/Intro";
-
+import MusicDetail from "../screens/MusicDetail";
 const Stack = createStackNavigator<NavigationParams>();
 
 const defaultNavOptions = {
@@ -34,6 +34,9 @@ export default function Navigation() {
         }}
       />
       <Stack.Screen name="Home" component={HomeScreen} options={{
+        headerShown: false,
+      }} />
+      <Stack.Screen name="MusicDetail" component={MusicDetail} options={{
         headerShown: false,
       }} />
     </Stack.Navigator>

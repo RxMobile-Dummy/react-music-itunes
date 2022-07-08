@@ -45,11 +45,11 @@ const Podcast: React.FC<Props> = ({ navigation }) => {
   // To render list card data
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => { }} style={styles.flatCardVw}>
+    <TouchableOpacity onPress={() => { navigation.navigate("MusicDetail", { musicDetail: item, podcast: true }) }} style={styles.flatCardVw}>
       <Image
         style={styles.musicImage}
         source={{
-          uri: item.artworkUrl160,
+          uri: item.artworkUrl600,
         }}
       />
       <Text style={styles.nameTxt}>{item.collectionName}</Text>
