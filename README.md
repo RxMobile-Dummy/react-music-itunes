@@ -8,7 +8,17 @@
   - We have used muzik application's logo in splash screen to make it better.
 - Intro Screen
   - We have additionally added this screen to make users aware about concept of our application
-
+- Home Screen
+  - We have made user friendly design of home screen
+  - We have made attractive bottom tab bar with three screens 
+     - Music Screen
+      - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
+      - Users can find list according to album name and release date
+    - Setings Screen
+      - User can set different types of settings and log out from the app 
+    - Podcast Screen
+      - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
+    
 ## Package Structure
 
 ```

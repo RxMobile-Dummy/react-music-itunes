@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import { HomeReducer } from "../../screens/Home/home_redux/reducers/HomeReducer";
-
+import { MusicReducer } from "../../screens/Music/music_redux/reducers/MusicReducer";
+import { PodcastReducer } from "../../screens/Podcast/podcast_redux/reducers/PodCastReducer";
 const rootReducer = combineReducers({
-  homeReducer: HomeReducer,
+  musicReducer: MusicReducer,
+  podcastReducer: PodcastReducer
 });
 
 export type ApplicationState = ReturnType<typeof rootReducer>;

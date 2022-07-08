@@ -26,6 +26,8 @@ const Splash: React.FC<Props> = ({ navigation }) => {
   //Navigate to Into screen
   function _goToIntroScreen() {
     setTimeout(() => {
+      //   navigation.navigate("Home");
+      // }, 1000);
       navigation.navigate("Intro");
     }, 2000);
   }
