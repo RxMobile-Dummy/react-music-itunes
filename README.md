@@ -24,6 +24,33 @@
 -  Podcast Detail Screen
     - We have displayed detail of selected podcast 
     - User can play episodes 
+- Music Player screen
+    - User can see selected album video
+    - User can listen podcast episode 
+- Test Cases
+    - We have written Jest unit test cases for testing pages of application
+    - On Splash Screen we have written two test cases 
+       - To check whether application crashes on splash screen or not
+       - We have written test case to verify that splash screen will be visible to user until 5 seconds and after that user is  
+         navigating to the intro screen
+       - also we have added snapshot code to get snapshot of testing
+  - On Intro Screen we have written two test cases 
+       - To check whether application crashes on intro screen or not
+       - We have written test cases to verify that on pressing of next arrow button user is navigating to home page or not
+  - On Home Music screen we have written two test cases
+       - If user search albumname then list shouild be updated according to particular albumname
+       - If user selects album name then list should be updated according to album name filter,after that if user click on card then user should navigated to next screen.
+       - If user selects release date then list should be updated according to release date filter,after that if user click on card then user should                 navigated to next screen.
+  - On Home Podcast screen we have written one test case
+       - If user search podcast episode then list shouild be updated according to particular episode name
+  - On Settings screen we have written one test case
+       - If user click on logout it will navigate user to singin screen
+  - On Music detail screen we have written one test case
+      - If user click on back arrow then user should navigate to the previous screen.
+  - On Podcast detail screen we have written one test case
+      - If user click on back arrow then user should navigate to the previous screen.
+  - On Music Player screen we have written one test case
+      - If user click on back arrow then user should navigate to the previous screen.
     
 ## Package Structure
 

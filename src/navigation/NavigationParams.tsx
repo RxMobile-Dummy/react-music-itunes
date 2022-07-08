@@ -3,4 +3,5 @@ export type NavigationParams = {
   Home: undefined;
   Intro: undefined;
   MusicDetail: undefined;
+  MusicPlayer: undefined;
 };
