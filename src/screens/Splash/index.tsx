@@ -2,6 +2,9 @@ import { View, SafeAreaView, Image, Animated } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "./styles";
 import { Images } from "../../../assets/images";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import Utils from "../../utils/Utils";
+const auth = getAuth();
 
 interface Props {
   navigation?: any;
@@ -9,7 +12,6 @@ interface Props {
 
 const Splash: React.FC<Props> = ({ navigation }) => {
   const [fadeAnim] = useState(new Animated.Value(0));
-
   useEffect(() => {
     _goToIntroScreen();
   }, []);
@@ -18,18 +20,26 @@ const Splash: React.FC<Props> = ({ navigation }) => {
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 4000,
+      duration: 3000,
       useNativeDriver: true,
     }).start();
   }, []);
 
-  //Navigate to Into screen
+  //Navigate to Into or home screen
   function _goToIntroScreen() {
-    setTimeout(() => {
-      //   navigation.navigate("Home");
-      // }, 1000);
-      navigation.navigate("Intro");
-    }, 2000);
+    setTimeout(async () => {
+      const user = await Utils.isUser();
+      if (user) {
+        navigation.navigate("Home");
+      } else {
+        const isIntroOpened = await Utils.isIntoOpened();
+        if (isIntroOpened) {
+          navigation.navigate("SignIn");
+        } else {
+          navigation.navigate("Intro");
+        }
+      }
+    }, 3000);
   }
   return (
     <SafeAreaView style={styles.mainContainer}>

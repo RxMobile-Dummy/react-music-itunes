@@ -13,12 +13,14 @@ import { Images } from "../../../assets/images";
 import { Colors } from "../../constants/Color";
 import AppButton from "../../components/button/AppButton";
 import { String } from "../../constants/String";
+import Utils from "../../utils/Utils";
 
 //Introduction screen, called after the splash screen and will navigate to sign in screen from here
 
 const IntroScreen: React.FC<Props> = ({ navigation }) => {
-  const onPressGo = () => {
-    // navigation.navigate("SignIn");
+  const onPressGo = async () => {
+    await Utils.storeIntroOpened();
+    navigation.navigate("SignIn");
   };
 
   const [sliderState, setSliderState] = useState({ currentPage: 0 });

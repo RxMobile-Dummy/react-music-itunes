@@ -8,17 +8,23 @@
   - We have used muzik application's logo in splash screen to make it better.
 - Intro Screen
   - We have additionally added this screen to make users aware about concept of our application
+- SignIn screen
+  - We have made user friendly design of SignIn screen and we have also added proper validations for email and password fields.
+  - Sign in using registered email and password using firebase
+- SignUp screen
+  - We have made user friendly design of SignIn screen and we have also added proper validations for first name, last name, email and password fields.
+  - Sign up using your email which is not registered earlier
 - Home Screen
   - We have made user friendly design of home screen
-  - We have made attractive bottom tab bar with three screens 
-     - Music Screen
-      - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
-      - Users can find list according to album name and release date
+  - We have made attractive bottom tab bar with three screens
+    - Music Screen
+    - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
+    - Users can find list according to album name and release date
     - Setings Screen
-      - User can set different types of settings and log out from the app 
+      - User can set different types of settings and log out from the app
     - Podcast Screen
       - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
-    
+
 ## Package Structure
 
 ```
