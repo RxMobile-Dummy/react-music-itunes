@@ -5,6 +5,8 @@ import { NavigationParams } from "./NavigationParams";
 import { Colors } from "../constants/Color";
 import Splash from "../screens/Splash";
 import HomeScreen from "../screens/home";
+import IntroScreen from "../screens/Intro";
+
 const Stack = createStackNavigator<NavigationParams>();
 
 const defaultNavOptions = {
@@ -19,6 +21,14 @@ export default function Navigation() {
       <Stack.Screen
         name="Splash"
         component={Splash}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name="Intro"
+        component={IntroScreen}
         options={{
           headerShown: false,
         }}

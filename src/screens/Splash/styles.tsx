@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
 import { Colors } from "../../constants/Color";
 
+//styles for splash screen views
+
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: Colors.primary,
