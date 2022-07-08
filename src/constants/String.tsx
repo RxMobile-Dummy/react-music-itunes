@@ -45,4 +45,12 @@ export const String = {
   SomethingWentWrong: "Something went wrong, Please try again.",
   IncorrectPassword: "Incorrect password.",
   UserNotFound: "User not found.",
+  SongsTxt: "Price",
+  FollowersTxt: "Country",
+  FollowingTxt: "Track Price",
+  EpiPrice: "Episode Price",
+  Albums: "Albums",
+  Artist: "ARTIST",
+  Podcast: "PODCAST",
+  Episode: "Episodes",
 };

@@ -10,6 +10,7 @@ import SignInScreen from "../screens/SignIn";
 import SignUpScreen from "../screens/SignUp";
 import { String } from "../constants/String";
 
+import MusicDetail from "../screens/MusicDetail";
 const Stack = createStackNavigator<NavigationParams>();
 
 const defaultNavOptions = {
@@ -58,6 +59,13 @@ export default function Navigation() {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="MusicDetail"
+        component={MusicDetail}
         options={{
           headerShown: false,
         }}

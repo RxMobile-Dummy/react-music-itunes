@@ -15,6 +15,7 @@
   - We have made user friendly design of SignIn screen and we have also added proper validations for first name, last name, email and password fields.
   - Sign up using your email which is not registered earlier
 - Home Screen
+
   - We have made user friendly design of home screen
   - We have made attractive bottom tab bar with three screens
     - Music Screen
@@ -24,6 +25,13 @@
       - User can set different types of settings and log out from the app
     - Podcast Screen
       - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
+
+- Music Detail Screen
+  - We have displayed detail of selected album
+  - User can play album
+- Podcast Detail Screen
+  - We have displayed detail of selected podcast
+  - User can play episodes
 
 ## Package Structure
 

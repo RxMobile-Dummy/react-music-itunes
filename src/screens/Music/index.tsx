@@ -78,7 +78,10 @@ const Music: React.FC<Props> = ({ navigation }) => {
   // To render list card items
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => {}} style={styles.flatCardVw}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("MusicDetail", { musicDetail: item })}
+      style={styles.flatCardVw}
+    >
       <Image
         style={styles.musicImage}
         source={{
