@@ -18,7 +18,7 @@ import { String } from "../../constants/String";
 
 const IntroScreen: React.FC<Props> = ({ navigation }) => {
   const onPressGo = () => {
-    // navigation.navigate("SignIn");
+    navigation.navigate("Home");
   };
 
   const [sliderState, setSliderState] = useState({ currentPage: 0 });
@@ -127,8 +127,8 @@ const IntroScreen: React.FC<Props> = ({ navigation }) => {
                       ? pageIndex === 1
                         ? Colors.slide2Color
                         : pageIndex === 2
-                        ? Colors.slide3Color
-                        : Colors.slide1Color
+                          ? Colors.slide3Color
+                          : Colors.slide1Color
                       : Colors.white,
                   width: pageIndex === index ? 40 : 8,
                 },
@@ -143,8 +143,8 @@ const IntroScreen: React.FC<Props> = ({ navigation }) => {
               pageIndex === 1
                 ? Colors.slide2Color
                 : pageIndex === 2
-                ? Colors.slide3Color
-                : Colors.slide1Color,
+                  ? Colors.slide3Color
+                  : Colors.slide1Color,
           }}
           onPress={onPressGo}
           text=""

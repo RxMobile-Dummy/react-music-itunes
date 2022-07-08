@@ -18,8 +18,6 @@ import { String } from '../../constants/String';
 import Podcast from '../Podcast';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-console.ignoredYellowBox = ["Warning: Each", "Warning: Failed"];
-
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
   const ThemeScreen = () => {
@@ -121,8 +119,8 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
             position={String.Left}
             component={() => (
               type === String.Down ?
-                <Music /> :
-                <Settings />
+                <Music navigation={navigation} /> :
+                <Settings navigation={navigation} />
             )}
           />
 
@@ -133,8 +131,8 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
             name="2"
             component={() => (
               type === String.Down ?
-                <Podcast /> :
-                <Settings />
+                <Podcast navigation={navigation} /> :
+                <Settings navigation={navigation} />
             )}
             position={String.Right}
           />

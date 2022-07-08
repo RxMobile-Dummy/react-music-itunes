@@ -18,6 +18,12 @@
       - User can set different types of settings and log out from the app 
     - Podcast Screen
       - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
+- Music Detail Screen
+    - We have displayed detail of selected album 
+    - User can play album 
+-  Podcast Detail Screen
+    - We have displayed detail of selected podcast 
+    - User can play episodes 
     
 ## Package Structure
 
