@@ -1,8 +1,9 @@
+import "./src/network/firebase_auth";
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, Text, View, Image } from "react-native";
 import Navigation from "./src/navigation";
-import { store } from './src/redux';
-import { Provider } from 'react-redux';
+import { store } from "./src/redux";
+import { Provider } from "react-redux";
 import { useFonts } from "expo-font";
 
 export default function App() {

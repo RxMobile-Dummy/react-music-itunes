@@ -13,12 +13,14 @@ import { Images } from "../../../assets/images";
 import { Colors } from "../../constants/Color";
 import AppButton from "../../components/button/AppButton";
 import { String } from "../../constants/String";
+import Utils from "../../utils/Utils";
 
 //Introduction screen, called after the splash screen and will navigate to sign in screen from here
 
 const IntroScreen: React.FC<Props> = ({ navigation }) => {
-  const onPressGo = () => {
-    navigation.navigate("Home");
+  const onPressGo = async () => {
+    await Utils.storeIntroOpened();
+    navigation.navigate("SignIn");
   };
 
   const [sliderState, setSliderState] = useState({ currentPage: 0 });
@@ -127,8 +129,8 @@ const IntroScreen: React.FC<Props> = ({ navigation }) => {
                       ? pageIndex === 1
                         ? Colors.slide2Color
                         : pageIndex === 2
-                          ? Colors.slide3Color
-                          : Colors.slide1Color
+                        ? Colors.slide3Color
+                        : Colors.slide1Color
                       : Colors.white,
                   width: pageIndex === index ? 40 : 8,
                 },
@@ -143,8 +145,8 @@ const IntroScreen: React.FC<Props> = ({ navigation }) => {
               pageIndex === 1
                 ? Colors.slide2Color
                 : pageIndex === 2
-                  ? Colors.slide3Color
-                  : Colors.slide1Color,
+                ? Colors.slide3Color
+                : Colors.slide1Color,
           }}
           onPress={onPressGo}
           text=""

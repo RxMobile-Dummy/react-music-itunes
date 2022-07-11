@@ -9,4 +9,6 @@ export const Colors = {
   slide1Color: "#F86080",
   slide2Color: "#F7943D",
   slide3Color: "#65419B",
+  purpleColor: "#A020F0",
+  lightGrey: "#D3D3D3",
 };

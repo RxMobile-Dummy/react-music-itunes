@@ -5,20 +5,24 @@ import {
   StyleSheet,
   ViewStyle,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import { Colors } from "../../constants/Color";
+import { Font } from "../../constants/Font";
 
 interface Props {
   text: string | number;
   disabled?: boolean;
   onPress?: () => void;
   containerStyle?: ViewStyle;
+  showLoader?: boolean;
 }
 const CutomButton: React.FC<Props> = ({
   text,
   onPress = () => null,
   containerStyle = {},
   disabled = false,
+  showLoader = false,
 }) => {
   return (
     <TouchableOpacity
@@ -26,7 +30,11 @@ const CutomButton: React.FC<Props> = ({
       style={[styles.button, containerStyle]}
       disabled={disabled}
     >
-      <Text style={styles.btnTxt}>{text}</Text>
+      {showLoader ? (
+        <ActivityIndicator size="small" color={Colors.white} />
+      ) : (
+        <Text style={styles.btnTxt}>{text}</Text>
+      )}
     </TouchableOpacity>
   );
 };
@@ -55,7 +63,8 @@ const styles = StyleSheet.create({
   btnTxt: {
     fontSize: 14,
     fontWeight: "bold",
-    color: Colors.white,
+    color: Colors.primary,
+    fontFamily: Font.MediumFont,
   },
 });
 export default CutomButton;

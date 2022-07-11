@@ -1,25 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 import {
   SafeAreaView,
   View,
   TouchableOpacity,
   Animated,
-  StatusBar
-} from 'react-native';
-import styles from './styles';
-import { Props } from './IHome';
-import { CurvedBottomBar } from 'react-native-curved-bottom-bar';
-import Music from '../Music';
-import Settings from '../settings'
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { NavigationContainer } from '@react-navigation/native';
-import { Colors } from '../../constants/Color';
-import { String } from '../../constants/String';
-import Podcast from '../Podcast';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+  StatusBar,
+} from "react-native";
+import styles from "./styles";
+import { Props } from "./IHome";
+import { CurvedBottomBar } from "react-native-curved-bottom-bar";
+import Music from "../Music";
+import Settings from "../settings";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { Colors } from "../../constants/Color";
+import { String } from "../../constants/String";
+import Podcast from "../Podcast";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
-
   const ThemeScreen = () => {
     const ref = useRef<any>(null);
     const [type, setType] = useState(String.Down);
@@ -53,23 +52,28 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     // Will render bototm tab icon
 
     const _renderIcon = (routeName: string, selectedTab: string) => {
-      let icon = '';
+      let icon = "";
 
       switch (routeName) {
-        case '1':
-          icon = 'md-musical-notes-outline';
+        case "1":
+          icon = "md-musical-notes-outline";
           break;
-        case '2':
-          icon = 'md-radio-outline';
+        case "2":
+          icon = "md-radio-outline";
           break;
       }
 
       return (
-
         <Ionicons
           name={icon}
           size={26}
-          color={routeName === selectedTab ? type === String.Down ? Colors.slide2Color : Colors.white : Colors.white}
+          color={
+            routeName === selectedTab
+              ? type === String.Down
+                ? Colors.slide2Color
+                : Colors.white
+              : Colors.white
+          }
         />
       );
     };
@@ -88,21 +92,35 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
           initialRouteName="0"
           renderCircle={() => (
             <TouchableOpacity
-              style={[type === String.Down ? styles.btnCircle : styles.btnCircleUp]}
+              style={[
+                type === String.Down ? styles.btnCircle : styles.btnCircleUp,
+              ]}
               onPress={() => onClickButton()}
             >
-              <Ionicons name="settings-outline" size={26} color={type === String.Down ? Colors.white : Colors.primary} />
+              <Ionicons
+                name="settings-outline"
+                size={26}
+                color={type === String.Down ? Colors.white : Colors.primary}
+              />
             </TouchableOpacity>
           )}
           tabBar={({ routeName, selectedTab, navigate }) => {
             return (
-              <Animated.View style={routeName === selectedTab ? {
-                transform: [{ scale: animatedButtonScale }]
-              } : {}}>
+              <Animated.View
+                style={
+                  routeName === selectedTab
+                    ? {
+                        transform: [{ scale: animatedButtonScale }],
+                      }
+                    : {}
+                }
+              >
                 <TouchableWithoutFeedback
-                  onPressIn={routeName === selectedTab ? onPressIn : () => { }}
-                  onPressOut={routeName === selectedTab ? onPressOut : () => { }}
-                  onPress={() => { navigate(routeName), setType(String.Down) }}
+                  onPressIn={routeName === selectedTab ? onPressIn : () => {}}
+                  onPressOut={routeName === selectedTab ? onPressOut : () => {}}
+                  onPress={() => {
+                    navigate(routeName), setType(String.Down);
+                  }}
                   style={styles.centerBtn}
                 >
                   {_renderIcon(routeName, selectedTab)}
@@ -113,39 +131,55 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         >
           <CurvedBottomBar.Screen
             options={{
-              headerShown: false
+              headerShown: false,
             }}
             name="1"
             position={String.Left}
-            component={() => (
-              type === String.Down ?
-                <Music navigation={navigation} /> :
+            component={() =>
+              type === String.Down ? (
+                <Music />
+              ) : (
                 <Settings navigation={navigation} />
-            )}
+              )
+            }
+            component={() =>
+              type === String.Down ? (
+                <Music navigation={navigation} />
+              ) : (
+                <Settings navigation={navigation} />
+              )
+            }
           />
 
           <CurvedBottomBar.Screen
             options={{
-              headerShown: false
+              headerShown: false,
             }}
             name="2"
-            component={() => (
-              type === String.Down ?
-                <Podcast navigation={navigation} /> :
+            component={() =>
+              type === String.Down ? (
+                <Podcast />
+              ) : (
                 <Settings navigation={navigation} />
-            )}
+              )
+            }
+            component={() =>
+              type === String.Down ? (
+                <Podcast navigation={navigation} />
+              ) : (
+                <Settings navigation={navigation} />
+              )
+            }
             position={String.Right}
           />
         </CurvedBottomBar.Navigator>
-      </View >
+      </View>
     );
   };
 
-
-
   return (
     <SafeAreaView style={styles.container}>
-      <NavigationContainer independent={true} >
+      <NavigationContainer independent={true}>
         <ThemeScreen />
       </NavigationContainer>
     </SafeAreaView>

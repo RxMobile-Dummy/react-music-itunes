@@ -8,50 +8,58 @@
   - We have used muzik application's logo in splash screen to make it better.
 - Intro Screen
   - We have additionally added this screen to make users aware about concept of our application
+- SignIn screen
+  - We have made user friendly design of SignIn screen and we have also added proper validations for email and password fields.
+  - Sign in using registered email and password using firebase
+- SignUp screen
+  - We have made user friendly design of SignIn screen and we have also added proper validations for first name, last name, email and password fields.
+  - Sign up using your email which is not registered earlier
 - Home Screen
+
   - We have made user friendly design of home screen
-  - We have made attractive bottom tab bar with three screens 
-     - Music Screen
-      - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
-      - Users can find list according to album name and release date
+  - We have made attractive bottom tab bar with three screens
+    - Music Screen
+    - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
+    - Users can find list according to album name and release date
     - Setings Screen
-      - User can set different types of settings and log out from the app 
+      - User can set different types of settings and log out from the app
     - Podcast Screen
       - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
+
 - Music Detail Screen
-    - We have displayed detail of selected album 
-    - User can play album 
--  Podcast Detail Screen
-    - We have displayed detail of selected podcast 
-    - User can play episodes 
+  - We have displayed detail of selected album
+  - User can play album
+- Podcast Detail Screen
+  - We have displayed detail of selected podcast
+  - User can play episodes
 - Music Player screen
-    - User can see selected album video
-    - User can listen podcast episode 
+  - User can see selected album video
+  - User can listen podcast episode
 - Test Cases
-    - We have written Jest unit test cases for testing pages of application
-    - On Splash Screen we have written two test cases 
-       - To check whether application crashes on splash screen or not
-       - We have written test case to verify that splash screen will be visible to user until 5 seconds and after that user is  
-         navigating to the intro screen
-       - also we have added snapshot code to get snapshot of testing
-  - On Intro Screen we have written two test cases 
-       - To check whether application crashes on intro screen or not
-       - We have written test cases to verify that on pressing of next arrow button user is navigating to home page or not
+  - We have written Jest unit test cases for testing pages of application
+  - On Splash Screen we have written two test cases
+    - To check whether application crashes on splash screen or not
+    - We have written test case to verify that splash screen will be visible to user until 5 seconds and after that user is  
+      navigating to the intro screen
+    - also we have added snapshot code to get snapshot of testing
+  - On Intro Screen we have written two test cases
+    - To check whether application crashes on intro screen or not
+    - We have written test cases to verify that on pressing of next arrow button user is navigating to home page or not
   - On Home Music screen we have written two test cases
-       - If user search albumname then list shouild be updated according to particular albumname
-       - If user selects album name then list should be updated according to album name filter,after that if user click on card then user should navigated to next screen.
-       - If user selects release date then list should be updated according to release date filter,after that if user click on card then user should                 navigated to next screen.
+    - If user search albumname then list shouild be updated according to particular albumname
+    - If user selects album name then list should be updated according to album name filter,after that if user click on card then user should navigated to next screen.
+    - If user selects release date then list should be updated according to release date filter,after that if user click on card then user should navigated to next screen.
   - On Home Podcast screen we have written one test case
-       - If user search podcast episode then list shouild be updated according to particular episode name
+    - If user search podcast episode then list shouild be updated according to particular episode name
   - On Settings screen we have written one test case
-       - If user click on logout it will navigate user to singin screen
+    - If user click on logout it will navigate user to singin screen
   - On Music detail screen we have written one test case
-      - If user click on back arrow then user should navigate to the previous screen.
+    - If user click on back arrow then user should navigate to the previous screen.
   - On Podcast detail screen we have written one test case
-      - If user click on back arrow then user should navigate to the previous screen.
+    - If user click on back arrow then user should navigate to the previous screen.
   - On Music Player screen we have written one test case
-      - If user click on back arrow then user should navigate to the previous screen.
-    
+    - If user click on back arrow then user should navigate to the previous screen.
+
 ## Package Structure
 
 ```
