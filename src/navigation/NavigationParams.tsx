@@ -5,4 +5,5 @@ export type NavigationParams = {
   SignUp: undefined;
   Home: undefined;
   MusicDetail: undefined;
+  MusicPlayer: undefined;
 };

@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { String } from '../../constants/String';
 import moment from 'moment';
+import * as Linking from 'expo-linking';
 
 interface Props {
     route?: any;
@@ -33,6 +34,19 @@ const MusicDetail: React.FC<Props> = ({ route, navigation }) => {
             })
         ]).start();
     };
+
+    function _setPlayUrl(item) {
+        if (podcast) {
+            navigation.navigate("MusicPlayer", { podcast: true, musicDetail: musicDetail })
+        } else {
+            if (musicDetail.isStreamable === true) {
+                Linking.openURL(item)
+            } else {
+                navigation.navigate("MusicPlayer", { musicDetail: musicDetail })
+            }
+        }
+    }
+
     // Will return detail view
 
     return (
@@ -70,7 +84,7 @@ const MusicDetail: React.FC<Props> = ({ route, navigation }) => {
                     </View>
                 </ImageBackground>
                 <View style={styles.mainBottomVw}>
-                    <TouchableOpacity style={styles.dwnldBtn}>
+                    <TouchableOpacity style={styles.dwnldBtn} onPress={() => { _setPlayUrl(podcast ? musicDetail.episodeUrl : musicDetail.previewUrl) }}>
                         <Ionicons name="ios-play" size={40} color={Colors.white} />
                     </TouchableOpacity>
                     <View style={styles.mainTabVw}>

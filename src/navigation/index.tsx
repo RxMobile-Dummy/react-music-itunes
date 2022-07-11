@@ -11,6 +11,7 @@ import SignUpScreen from "../screens/SignUp";
 import { String } from "../constants/String";
 
 import MusicDetail from "../screens/MusicDetail";
+import MusicPlayer from "../screens/MusicPlayer";
 const Stack = createStackNavigator<NavigationParams>();
 
 const defaultNavOptions = {
@@ -66,6 +67,13 @@ export default function Navigation() {
       <Stack.Screen
         name="MusicDetail"
         component={MusicDetail}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="MusicPlayer"
+        component={MusicPlayer}
         options={{
           headerShown: false,
         }}

@@ -151,11 +151,7 @@ const SignUpScreen: React.FC<Props> = ({ navigation }) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <Header
-        title={String.SignUp}
-        showBackButton={true}
-        onPress={onPressSignIn}
-      />
+      <Header title={String.SignUp} backButton={true} onPress={onPressSignIn} />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
