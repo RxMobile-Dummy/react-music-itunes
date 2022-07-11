@@ -7,6 +7,7 @@ import Splash from "../screens/Splash";
 import HomeScreen from "../screens/home";
 import IntroScreen from "../screens/Intro";
 import MusicDetail from "../screens/MusicDetail";
+import MusicPlayer from '../screens/MusicPlayer';
 const Stack = createStackNavigator<NavigationParams>();
 
 const defaultNavOptions = {
@@ -37,6 +38,9 @@ export default function Navigation() {
         headerShown: false,
       }} />
       <Stack.Screen name="MusicDetail" component={MusicDetail} options={{
+        headerShown: false,
+      }} />
+      <Stack.Screen name="MusicPlayer" component={MusicPlayer} options={{
         headerShown: false,
       }} />
     </Stack.Navigator>
