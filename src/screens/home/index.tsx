@@ -137,13 +137,6 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
             position={String.Left}
             component={() =>
               type === String.Down ? (
-                <Music />
-              ) : (
-                <Settings navigation={navigation} />
-              )
-            }
-            component={() =>
-              type === String.Down ? (
                 <Music navigation={navigation} />
               ) : (
                 <Settings navigation={navigation} />
@@ -156,13 +149,6 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
               headerShown: false,
             }}
             name="2"
-            component={() =>
-              type === String.Down ? (
-                <Podcast />
-              ) : (
-                <Settings navigation={navigation} />
-              )
-            }
             component={() =>
               type === String.Down ? (
                 <Podcast navigation={navigation} />
