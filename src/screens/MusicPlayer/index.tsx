@@ -18,17 +18,11 @@ import Header from "../../components/Header/Header";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../../constants/Color";
 import SeekBar from "../../components/player/SeekBar";
-import { MaterialIcons } from "@expo/vector-icons";
 import TextTicker from "react-native-text-ticker";
 
-import database, {
-  getDatabase,
-  ref,
-  onValue,
-  set,
-  remove,
-} from "firebase/database";
+import { getDatabase, ref, onValue, set, remove } from "firebase/database";
 import Utils from "../../utils/Utils";
+import LikeButton from "../../components/button/LikeButton";
 
 interface Props {
   route?: any;
@@ -37,20 +31,15 @@ interface Props {
 // Will return audio and video view as per requirement
 
 const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
-  const { musicDetail, podcast } = route.params;
+  const { musicDetail, podcast, musicPlayer } = route.params;
 
   const [playbackInstance, setPlaybackInstance] = useState(null);
   const [isPlaying, setPlaying] = useState(false);
   const [previouslyPlay, setPreviouslyPlay] = useState(false);
   const [volume, setVolume] = useState(1.0);
   const [isBuffering, setBuffering] = useState(false);
-  const [paused, setPaused] = useState(false);
   const [totalLength, setTotalLength] = useState(1);
   const [currentPosition, setCurrentPosition] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedTrack, setSelectedTrack] = useState(0);
-  const [repeatOn, setRepeatOn] = useState(false);
-  const [shuffleOn, setShuffleOn] = useState(false);
 
   const [userId, setUserId] = useState("");
   const [isFavourite, setFavourite] = useState(false);
@@ -119,7 +108,7 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
   // Will stop sound, When user will be back
 
   React.useEffect(() => {
-    console.log("musicDetail.previewUrl :: = ", musicDetail.previewUrl);
+    console.log("musicDetail.previewUrl :: = ", JSON.stringify(musicDetail));
     return playbackInstance
       ? () => {
           console.log("Unloading Sound");
@@ -132,7 +121,10 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
     async function configureAudio() {
       const data = await Utils.getUserData();
       setUserId(data.userId);
-      getIsFavourite(musicDetail.trackId, data.userId);
+      const track = musicDetail.trackId
+        ? musicDetail.trackId
+        : musicDetail.collectionId;
+      getIsFavourite(track, data.userId);
       try {
         await Audio.setAudioModeAsync({
           allowsRecordingIOS: false,
@@ -160,7 +152,7 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
     //   uri: musicDetail.episodeUrl,
     // });
     const source = {
-      uri: musicDetail.episodeUrl,
+      uri: musicPlayer ? musicDetail.previewUrl : musicDetail.episodeUrl,
     };
     const status = {
       shouldPlay: isPlaying,
@@ -176,6 +168,7 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
 
   //set and remove favourite from database
   function setOrRemoveFavorite(trackId: any) {
+    console.log("setOrRemoveFavorite trackId : ", trackId);
     const db = getDatabase();
     if (!isFavourite) {
       const reference = ref(db, "users/" + userId + "/favourite/" + trackId);
@@ -216,12 +209,14 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
         onPress={() => navigation.goBack()}
       />
       <View style={styles.container}>
-        {podcast ? (
+        {podcast || musicPlayer ? (
           <View style={{}}>
             <View style={styles.audioVw}>
               <Image
                 source={{
-                  uri: musicDetail.artworkUrl600,
+                  uri: musicPlayer
+                    ? musicDetail.artworkUrl100
+                    : musicDetail.artworkUrl600,
                 }}
                 style={styles.artImg}
                 resizeMode={"cover"}
@@ -236,20 +231,19 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
                 bounce={false}
                 repeatSpacer={50}
               >
-                {musicDetail.trackName}
+                {musicPlayer
+                  ? musicDetail.collectionName
+                  : musicDetail.trackName}
               </TextTicker>
-              <TouchableOpacity
+              <LikeButton
                 onPress={() => {
-                  setOrRemoveFavorite(musicDetail.trackId);
+                  setOrRemoveFavorite(
+                    musicPlayer ? musicDetail.collectionId : musicDetail.trackId
+                  );
                 }}
-                style={styles.favBtn}
-              >
-                <MaterialIcons
-                  name={isFavourite ? "favorite" : "favorite-outline"}
-                  size={24}
-                  color={Colors.red}
-                />
-              </TouchableOpacity>
+                isLike={isFavourite}
+                containerStyle={styles.favBtn}
+              />
             </View>
             <SeekBar
               onSeek={seek}
@@ -269,6 +263,13 @@ const MusicPlayer: React.FC<Props> = ({ route, navigation }) => {
           </View>
         ) : (
           <View style={styles.videoVw}>
+            <LikeButton
+              onPress={() => {
+                setOrRemoveFavorite(musicDetail.collectionId);
+              }}
+              isLike={isFavourite}
+              containerStyle={[styles.favBtn, { marginTop: 10 }]}
+            />
             <Video
               ref={video}
               style={styles.video}

@@ -12,10 +12,14 @@ import {
 // var Slider = require('react-native-slider');
 import Slider from "@react-native-community/slider";
 import { Colors } from "../../constants/Color";
+import { Font } from "../../constants/Font";
 
-function pad(n, width, z = 0) {
-  n = n + "";
-  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+// function pad(n, width, z = 0) {
+//   n = n + "";
+//   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+// }
+function pad(value) {
+  return (value < 10 ? "0" : "") + value;
 }
 
 // const minutesAndSeconds = (position) => [
@@ -24,8 +28,8 @@ function pad(n, width, z = 0) {
 // ];
 
 const minutesAndSeconds = (position) => [
-  Math.floor((position / 1000 / 60) << 0),
-  Math.floor((position / 1000) % 60),
+  pad(Math.floor((position / 1000 / 60) << 0)),
+  pad(Math.floor((position / 1000) % 60)),
 ];
 
 const SeekBar = ({ trackLength, currentPosition, onSeek, onSlidingStart }) => {
@@ -79,7 +83,8 @@ const styles = StyleSheet.create({
   // },
   text: {
     color: Colors.accent,
-    fontSize: 12,
+    fontSize: 14,
+    fontFamily: Font.SemiBoldFont,
     textAlign: "center",
   },
 });

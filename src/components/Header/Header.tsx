@@ -1,8 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Colors } from "../../constants/Color";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { MaterialIcons } from "@expo/vector-icons";
 import _ from "lodash";
+import { Font } from "../../constants/Font";
 
 interface Props {
   title: string;
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
     color: Colors.slide2Color,
+    fontFamily: Font.BoldFont,
   },
   backBtn: {
     marginLeft: 20,

@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { Colors } from "../../constants/Color";
+import { Font } from "../../constants/Font";
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
   },
   video: {
     alignSelf: "center",
-    height: Dimensions.get("screen").height - 150,
+    height: Dimensions.get("screen").height - 165,
     width: Dimensions.get("screen").width - 30,
   },
   artImg: {
@@ -56,6 +57,7 @@ const styles = StyleSheet.create({
   tickerText: {
     fontSize: 18,
     color: Colors.accent,
+    fontFamily: Font.MediumFont,
   },
   textFavouriteView: {
     flexDirection: "row",

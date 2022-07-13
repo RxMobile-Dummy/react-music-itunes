@@ -35,6 +35,7 @@
 - Music Player screen
   - User can see selected album video
   - User can listen podcast episode
+  - User can favourite the music and broadcast
 - Test Cases
   - We have written Jest unit test cases for testing pages of application
   - On Splash Screen we have written two test cases
