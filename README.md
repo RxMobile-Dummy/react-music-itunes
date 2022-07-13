@@ -60,6 +60,9 @@
     - If user click on back arrow then user should navigate to the previous screen.
   - On Music Player screen we have written one test case
     - If user click on back arrow then user should navigate to the previous screen.
+    - If user click on heart icon music will add in user favourite, if already added then we can remove on click.
+    - If user click on play button, music start playing and we can pause on same button click.
+    - If user drag the slider left and right, music play from that position.
 
 ## Package Structure
 
