@@ -8,11 +8,6 @@ export default {
   orientation: "portrait",
   icon: "./assets/app_icon.png",
   userInterfaceStyle: "light",
-  splash: {
-    image: "./assets/splash.png",
-    resizeMode: "contain",
-    backgroundColor: "#0E0E0E",
-  },
   ios: {
     bundleIdentifier: IS_DEV ? "com.muzik.in.dev" : "com.muzik.in",
     supportsTablet: true,

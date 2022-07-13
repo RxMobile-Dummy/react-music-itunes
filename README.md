@@ -12,20 +12,18 @@
   - We have made user friendly design of SignIn screen and we have also added proper validations for email and password fields.
   - Sign in using registered email and password using firebase
 - SignUp screen
-  - We have made user friendly design of SignIn screen and we have also added proper validations for first name, last name, email and password fields.
-  - Sign up using your email which is not registered earlier
+  - We have made user friendly design of SignUp screen and we have also added proper validations for first name, last name, email and password fields.
+  - Users can sign up using unique email address using firebase.
 - Home Screen
-
   - We have made user friendly design of home screen
   - We have made attractive bottom tab bar with three screens
     - Music Screen
     - Users can search their favourite artist by typing artist name or search field and according to that list will be displayed
     - Users can find list according to album name and release date
     - Setings Screen
-      - User can set different types of settings and log out from the app
+      - User can logout from application and will be navigated to sign in screen.
     - Podcast Screen
       - Users can search their favourite podcast episode by typing name or search field and according to that list will be displayed
-
 - Music Detail Screen
   - We have displayed detail of selected album
   - User can play album
@@ -33,32 +31,42 @@
   - We have displayed detail of selected podcast
   - User can play episodes
 - Music Player screen
-  - User can see selected album video
+  - User can listen selected album
   - User can listen podcast episode
+  - User can favourite the music and broadcast
+- Animations
+  - We have added animation on all the pages of app to make application attractive.
+  - We have added FadeIn animation on Splash screen
+  - We have added FadeIn animation on Sign In screen
+  - We have added FadeIn animation on Sign Up screen
+  - We have added Spring animation on Intro screen
+  - We have added bounce animation on Player screen favourite button.
+  - We have added FadeIn and Scale Interpolate animation on Home Detail Screen
 - Test Cases
   - We have written Jest unit test cases for testing pages of application
   - On Splash Screen we have written two test cases
     - To check whether application crashes on splash screen or not
-    - We have written test case to verify that splash screen will be visible to user until 5 seconds and after that user is  
-      navigating to the intro screen
-    - also we have added snapshot code to get snapshot of testing
+    - We have written test case to verify that splash screen will be visible to user until 5 seconds and after that user will be navigated to the intro screen and we have added snapshot code to get snapshot of testing
   - On Intro Screen we have written two test cases
     - To check whether application crashes on intro screen or not
     - We have written test cases to verify that on pressing of next arrow button user is navigating to home page or not
-  - On Home Music screen we have written two test cases
+  - On Home Music screen we have written three test cases
     - If user search albumname then list shouild be updated according to particular albumname
     - If user selects album name then list should be updated according to album name filter,after that if user click on card then user should navigated to next screen.
     - If user selects release date then list should be updated according to release date filter,after that if user click on card then user should navigated to next screen.
   - On Home Podcast screen we have written one test case
-    - If user search podcast episode then list shouild be updated according to particular episode name
+    - If user search podcast episode then list should be updated according to particular episode name
   - On Settings screen we have written one test case
     - If user click on logout it will navigate user to singin screen
   - On Music detail screen we have written one test case
     - If user click on back arrow then user should navigate to the previous screen.
   - On Podcast detail screen we have written one test case
     - If user click on back arrow then user should navigate to the previous screen.
-  - On Music Player screen we have written one test case
-    - If user click on back arrow then user should navigate to the previous screen.
+  - On Music Player screen we have written four test case - If user click on back arrow then user should navigate to the previous screen. - If user click on heart icon music/prodcast will be added in favourites, if user had already added music/prodcast in favourite then by clicking on that heart icon we can remove it from favourites. - If user click on play button, music will start playing and we can pause it by clicking on same button. - If user drag the slider left and right, music will play from that position.
+
+<p align="center">
+    <img width="180" height="350" src="muzik.gif">
+</p>
 
 ## Package Structure
 
@@ -133,6 +141,8 @@ Muzik/
 - **LifeCycle Component**
   - Hooks
   - Functional Components
+- **Firebase**
+  - The Firebase Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code. Data is persisted locally, and even while offline, realtime events continue to fire, giving the end user a responsive experience.
 - **Unit Testing**
   - Jest Framework
   - Offers a CLI tool to control your tests easily

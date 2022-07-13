@@ -216,7 +216,7 @@ const SignUpScreen: React.FC<Props> = ({ navigation }) => {
                     <CutomButton
                       containerStyle={{ alignSelf: "center" }}
                       onPress={handleSubmit}
-                      text="Register"
+                      text={String.SignUp}
                       disabled={isLoading}
                       showLoader={isLoading}
                     />

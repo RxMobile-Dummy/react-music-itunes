@@ -209,7 +209,7 @@ const SignInScreen: React.FC<Props> = ({ navigation }) => {
             <View style={styles.bottomView}>
               <Text style={styles.bottomText}>{String.DontHaveAccoount}</Text>
               <TouchableOpacity onPress={clickOnRegister}>
-                <Text style={styles.regBtn}>{String.Register}</Text>
+                <Text style={styles.regBtn}>{String.SignUp}</Text>
               </TouchableOpacity>
             </View>
           </View>

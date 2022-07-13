@@ -20,7 +20,7 @@ const Splash: React.FC<Props> = ({ navigation }) => {
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 3000,
+      duration: 4000,
       useNativeDriver: true,
     }).start();
   }, []);
@@ -39,7 +39,7 @@ const Splash: React.FC<Props> = ({ navigation }) => {
           navigation.navigate("Intro");
         }
       }
-    }, 3000);
+    }, 4000);
   }
   return (
     <SafeAreaView style={styles.mainContainer}>
